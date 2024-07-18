@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     githubBtn.addEventListener('click', () => {
-        window.location.href = 'https://github.com/Settle-Up/settle-up-server';
+        window.location.href = 'https://github.com/Settle-Up/settle-up-client';
     });
 
     howToMakeBtn.addEventListener('click', () => {
