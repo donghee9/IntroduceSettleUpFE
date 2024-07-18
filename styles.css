@@ -1,0 +1,460 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+  overflow-x: hidden;
+  padding-top: 5mm;
+}
+
+#language-selection.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column; /* Ensure vertical alignment */
+  gap: 20mm; /* Add space between buttons */
+}
+
+.button {
+  width: 140px;
+  height: 45px;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.button.active {
+  background-color: #2ee59d;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+}
+
+.button:hover {
+  background-color: #2ee59d;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+#invoice-POS {
+  box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5);
+  padding: 3mm;
+  margin: 15mm auto 0;
+  width: 100mm;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(100vh - 58px - 3mm);
+  background: rgb(255, 255, 255)
+    url(https://static.licdn.com/scds/common/u/images/apps/payments/textures/texture_paper_304x128_v1.png) repeat scroll
+    0px 0px / auto padding-box border-box;
+  position: relative;
+  overflow-y: auto;
+  transition: width 0.3s ease-in-out;
+}
+
+#invoice-POS:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  bottom: -10px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 2%,
+    #fff 2%,
+    #fff 3%,
+    transparent 3%,
+    transparent 5%,
+    #fff 5%,
+    #fff 6%,
+    transparent 6%,
+    transparent 8%,
+    #fff 8%,
+    #fff 9%,
+    transparent 9%,
+    transparent 11%,
+    #fff 11%,
+    #fff 12%,
+    transparent 12%,
+    transparent 14%,
+    #fff 14%,
+    #fff 15%,
+    transparent 15%,
+    transparent 17%,
+    #fff 17%,
+    #fff 18%,
+    transparent 18%,
+    transparent 20%,
+    #fff 20%,
+    #fff 21%,
+    transparent 21%,
+    transparent 23%,
+    #fff 23%,
+    #fff 24%,
+    transparent 24%,
+    transparent 26%,
+    #fff 26%,
+    #fff 27%,
+    transparent 27%,
+    transparent 29%,
+    #fff 29%,
+    #fff 30%,
+    transparent 30%,
+    transparent 32%,
+    #fff 32%,
+    #fff 33%,
+    transparent 33%,
+    transparent 35%,
+    #fff 35%,
+    #fff 36%,
+    transparent 36%,
+    transparent 38%,
+    #fff 38%,
+    #fff 39%,
+    transparent 39%,
+    transparent 41%,
+    #fff 41%,
+    #fff 42%,
+    transparent 42%,
+    transparent 44%,
+    #fff 44%,
+    #fff 45%,
+    transparent 45%,
+    transparent 47%,
+    #fff 47%,
+    #fff 48%,
+    transparent 48%,
+    transparent 50%,
+    #fff 50%,
+    #fff 51%,
+    transparent 51%,
+    transparent 53%,
+    #fff 53%,
+    #fff 54%,
+    transparent 54%,
+    transparent 56%,
+    #fff 56%,
+    #fff 57%,
+    transparent 57%,
+    transparent 59%,
+    #fff 59%,
+    #fff 60%,
+    transparent 60%,
+    transparent 62%,
+    #fff 62%,
+    #fff 63%,
+    transparent 63%,
+    transparent 65%,
+    #fff 65%,
+    #fff 66%,
+    transparent 66%,
+    transparent 68%,
+    #fff 68%,
+    #fff 69%,
+    transparent 69%,
+    transparent 71%,
+    #fff 71%,
+    #fff 72%,
+    transparent 72%,
+    transparent 74%,
+    #fff 74%,
+    #fff 75%,
+    transparent 75%,
+    transparent 77%,
+    #fff 77%,
+    #fff 78%,
+    transparent 78%,
+    transparent 80%,
+    #fff 80%,
+    #fff 81%,
+    transparent 81%,
+    transparent 83%,
+    #fff 83%,
+    #fff 84%,
+    transparent 84%,
+    transparent 86%,
+    #fff 86%,
+    #fff 87%,
+    transparent 87%,
+    transparent 89%,
+    #fff 89%,
+    #fff 90%,
+    transparent 90%,
+    transparent 92%,
+    #fff 92%,
+    #fff 93%,
+    transparent 93%,
+    transparent 95%,
+    #fff 95%,
+    #fff 96%,
+    transparent 96%,
+    transparent 98%,
+    #fff 98%,
+    #fff 99%,
+    transparent 99%,
+    transparent 100%
+  );
+}
+
+::selection {
+  background: #2ee59d;
+  color: #fff;
+}
+::moz-selection {
+  background: #2ee59d;
+  color: #fff;
+}
+h1 {
+  font-size: 1.4em;
+  color: #222;
+}
+h2 {
+  font-size: 1em;
+}
+h3 {
+  font-size: 1.3em;
+  font-weight: 300;
+  line-height: 2em;
+}
+h5 {
+  font-size: 0.7em;
+}
+p {
+  font-size: 0.8em;
+  color: #666;
+  line-height: 1.5em;
+}
+#top,
+#mid,
+#bot {
+  border-bottom: 1px solid #eee;
+}
+#top {
+  min-height: 100px;
+}
+#mid {
+  min-height: 80px;
+}
+#bot {
+  min-height: 50px;
+}
+#top .logo {
+  height: 50px;
+  width: 50px;
+  background: url(https://github.com/donghee9/Resource/assets/129722492/a2077840-286b-4612-a40d-9415f9b6e6d8) no-repeat;
+  background-size: 50px 50px;
+}
+.clientlogo {
+  float: left;
+  height: 60px;
+  width: 60px;
+  background: url(http://michaeltruong.ca/images/client.jpg) no-repeat;
+  background-size: 60px 60px;
+  border-radius: 50px;
+}
+.info {
+  display: block;
+  margin-left: 0;
+}
+.title {
+  float: right;
+}
+.title p {
+  text-align: right;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+td {
+}
+.tabletitle {
+  font-size: 0.7em;
+  background: #eee;
+}
+.service {
+  border-bottom: 3px solid #eee;
+}
+.item {
+  width: 45mm;
+}
+.itemtext {
+  font-size: 0.8em;
+}
+#legalcopy {
+  margin-top: 6mm;
+}
+a {
+  color: gray;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #2ee59d;
+}
+
+tr.service.hoverable:hover {
+  background-color: #2ee59d;
+  color: #fff;
+}
+
+#content-container {
+  display: none;
+  width: 100%;
+}
+
+#content-container.active {
+  display: block;
+}
+
+.service a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (max-width: 600px) {
+  #invoice-POS {
+    width: 90mm;
+    padding: 2mm;
+  }
+
+  h1 {
+    font-size: 1.2em;
+  }
+  h2 {
+    font-size: 0.9em;
+  }
+  h3 {
+    font-size: 1.1em;
+  }
+  p {
+    font-size: 0.7em;
+  }
+  h5 {
+    font-size: 0.6em;
+  }
+
+  .item,
+  .itemtext {
+    font-size: 0.6em;
+  }
+}
+
+@media (max-width: 400px) {
+  #invoice-POS {
+    width: 80mm;
+    padding: 1mm;
+  }
+
+  h1 {
+    font-size: 1.1em;
+  }
+  h2 {
+    font-size: 0.9em;
+  }
+  h3 {
+    font-size: 1em;
+  }
+  p {
+    font-size: 0.6em;
+  }
+  h5 {
+    font-size: 0.5em;
+  }
+
+  .item,
+  .itemtext {
+    font-size: 0.5em;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+input,
+textarea {
+  width: 70%;
+  padding: 5px;
+  margin: 10px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#waiting-message {
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  margin-top: 10px;
+}
